@@ -6,12 +6,11 @@ import {
   Math as CesiumMath,
   Viewer,
 } from 'cesium';
-import 'cesium/Build/Cesium/Widgets/widgets.css';
 
 // --- IMPORTANT ---
-// 1. Go to https://ion.cesium.com/ and create a free account.
-// 2. Go to the "Access Tokens" tab.
-// 3. Copy the "Default" access token and paste it below.
+// This line is still critical.
+(window as any).CESIUM_BASE_URL = '/cesium/';
+
 Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNDdiNWY1MC1hZDJhLTQ3NjItODIxOC03MmM1Mzk0MzNkNDUiLCJpZCI6MzQwMTEwLCJpYXQiOjE3NTc1MDc5MDR9.cyUvzRrufzlkzGqfd0miOY6y4CabqJ4Ob2o-0DG2slY";
 
 const HomePage: React.FC = () => {
