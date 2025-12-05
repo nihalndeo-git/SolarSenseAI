@@ -183,7 +183,8 @@ const SolarAnalysisPage: React.FC<SolarAnalysisPageProps> = ({ onAnalysisComplet
                 power: analysis.pv.daily_kWh,
                 location: { lat: state.latitude.toString(), lng: state.longitude.toString() },
                 timestamp: new Date(),
-                polygonGeoJson: state.polygonGeoJson
+                polygonGeoJson: state.polygonGeoJson,
+                monthly_kWh: analysis.pv.monthly_kWh_usable || analysis.pv.monthly_kWh
             };
             if (onAnalysisComplete) onAnalysisComplete(result);
             history.push({

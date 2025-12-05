@@ -14,6 +14,7 @@ export interface AnalysisResult {
   location: { lat: string; lng: string };
   timestamp: Date;
   polygonGeoJson: { type: 'Polygon'; coordinates: number[][][] };
+  monthly_kWh?: number[];
 }
 
 export interface SiteSetup {

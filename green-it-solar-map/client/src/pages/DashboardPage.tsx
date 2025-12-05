@@ -192,7 +192,8 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ history, onDeleteAnalysis
                             // For now, let's pass the data in state and assume we might need to update CarbonCreditsPage to read it.
                             // Actually, let's just pass it and see if we can update CarbonCreditsPage to use location state too.
                             power: item.power, // Daily kWh
-                            area: item.area
+                            area: item.area,
+                            monthly_kWh: item.monthly_kWh
                           }
                         })}
                       >

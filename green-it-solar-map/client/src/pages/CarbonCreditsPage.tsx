@@ -60,6 +60,7 @@ interface CarbonCreditsPageProps {
 interface LocationState {
     power?: number; // Daily kWh
     area?: number;
+    monthly_kWh?: number[];
 }
 
 const CarbonCreditsPage: React.FC<CarbonCreditsPageProps> = ({ latestResult }) => {
@@ -213,7 +214,9 @@ const CarbonCreditsPage: React.FC<CarbonCreditsPageProps> = ({ latestResult }) =
                             datasets: [
                                 {
                                     label: 'CO₂ Avoided',
-                                    data: Array(12).fill(carbonData.monthly_CO2_tons),
+                                    data: sourceData.monthly_kWh
+                                        ? sourceData.monthly_kWh.map(kwh => (kwh * 0.9) / 1000)
+                                        : Array(12).fill(carbonData.monthly_CO2_tons),
                                     borderColor: '#2196F3',
                                     backgroundColor: 'rgba(33, 150, 243, 0.2)',
                                     fill: true,
