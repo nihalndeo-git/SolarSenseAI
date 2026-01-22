@@ -11,18 +11,20 @@ interface TopAppBarProps {
 
 const TopAppBar: React.FC<TopAppBarProps> = ({ currentStep, onThemeToggle, isDark = false }) => {
   const location = useLocation();
-  
+
   // Determine current step based on route
   let step = 1;
   if (location.pathname === '/solar-analysis') step = 2;
   else if (location.pathname === '/prediction') step = 3;
   else if (location.pathname === '/dashboard') step = 4;
+  else if (location.pathname === '/carbon-credits') step = 5;
 
   const steps = [
     { num: 1, label: 'Site Setup', path: '/' },
     { num: 2, label: 'Solar Analysis', path: '/solar-analysis' },
     { num: 3, label: 'Prediction', path: '/prediction' },
     { num: 4, label: 'Dashboard', path: '/dashboard' },
+    { num: 5, label: 'Carbon Credits', path: '/carbon-credits' },
   ];
 
   return (
